@@ -1,9 +1,8 @@
 # linq
 
-This is a JavaScript implementation of the .NET [LINQ](https://msdn.microsoft.com/en-us/library/bb308959.aspx) library.
-This is a fork with the addition to use linq with the [Rhino JavaScript engine](https://github.com/StSchnell/linq/blob/master/README.md#rhino).
-It contains all the original .NET methods plus a few additions.
-Written in pure JavaScript with no dependencies.
+This is a JavaScript implementation of the .NET [LINQ](https://msdn.microsoft.com/en-us/library/bb308959.aspx) library.<br>
+This is a fork with the addition to use linq with the [Rhino JavaScript engine](https://github.com/StSchnell/linq/blob/master/README.md#rhino).<br>
+It contains all the original .NET methods plus a few additions and it is written in pure JavaScript with no dependencies.
 
 ## Examples
 
