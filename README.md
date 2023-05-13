@@ -6,6 +6,8 @@ It contains all the original .NET methods plus a few additions.
 
 Written in pure JavaScript with no dependencies.
 
+This is a fork with the addition to use linq with the Rhino JavaScript engine.
+
 ## Examples
 
 ```js
