@@ -30,7 +30,6 @@ var result;
 /* Get count of elements------------------------------------------------
  *
  * length is equivalent to count
- *
  */
 System.log('# Get count of elements');
 
@@ -64,7 +63,6 @@ System.log('\n');
 /* Projection on one or more properties with select---------------------
  *
  * map is equivalent to select
- *
  */
 System.log('# Projection on one or more properties with select');
 
@@ -86,7 +84,6 @@ System.log('\n');
 /* Filter elements with where-------------------------------------------
  *
  * filter is equivalent to select
- *
  */
 System.log('# Filter elements with where');
 
@@ -176,8 +173,7 @@ System.log('\n');
 
 /* Sort ascending using orderBy-----------------------------------------
  *
- * orrderBy is equivalent to sort with >
- *
+ * orderBy is equivalent to sort with >
  */
 System.log('# Sort ascending using orderBy');
 
@@ -207,8 +203,7 @@ System.log('\n');
 
 /* Sort descending using orderByDescending------------------------------
  *
- * orrderByDescending is equivalent to sort with <
- *
+ * orderByDescending is equivalent to sort with <
  */
 System.log('# Sort descending using orderByDescending');
 
@@ -291,7 +286,6 @@ System.log('\n');
 /* Check if at least one elements matchs expression with any------------
  *
  * some is equivalent to any
- *
  */
 System.log('# Check if at least one elements matchs expression with any');
 
@@ -313,7 +307,6 @@ System.log('\n');
 /* Check if all elements match expression with all----------------------
  *
  * every is equivalent to all
- *
  */
 System.log('# Check if all elements match expression with all');
 
