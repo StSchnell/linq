@@ -40,7 +40,7 @@ See [sample/tutorial.js](https://github.com/mihaifm/linq/blob/master/sample/tuto
 
 ## Rhino
 
-This engine is programmed in Java and generates a class from the compiled JavaScript code. It was bundled with Java SE 6 and used as a programming interface in some business products. [Rhino](https://github.com/mozilla/rhino/) can be used with Java 8 and above and is mostly compatible with the ECMAScript 5 standard. To use linq with Rhino, download the latest linq release and [modify it as it is described here](https://github.com/StSchnell/linq/edit/master/Rhino/README.md). 
+This engine is programmed in Java and generates a class from the compiled JavaScript code. It was bundled with Java SE 6 and used as a programming interface in some business products. [Rhino](https://github.com/mozilla/rhino/) can be used with Java 8 and above and is mostly compatible with the ECMAScript 5 standard. To use linq with Rhino, download the latest linq release and [modify it as it is described here](https://github.com/StSchnell/linq/blob/master/Rhino/README.md). 
 
 After these preparations you can load it in your code with `load` command and use it:
 
