@@ -332,7 +332,7 @@ System.log(result);
 System.log('\n');
 
 
-//-Skip the number of specified elements with skip----------------------
+// Skip the number of specified elements with skip----------------------
 System.log('# Skip the number of specified elements with skip');
 
 result = enumerable.skip(3).toArray();
@@ -643,6 +643,8 @@ return =>
 */
 
 System.log('\n');
+
+
 
 // LazyEvaluation and InfinityList--------------------------------------
 System.log('# LazyEvaluation and InfinityList');
