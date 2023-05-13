@@ -561,6 +561,7 @@ result =>
 
 System.log('\n');
 
+
 // Continue and break when iterating------------------------------------
 System.log('# Continue and break when iterating');
 
@@ -643,7 +644,6 @@ return =>
 */
 
 System.log('\n');
-
 
 
 // LazyEvaluation and InfinityList--------------------------------------
