@@ -20,21 +20,21 @@ load("linq.class.js");
 var Enumerable = LINQ();
 
 // Arrow function expression aka arrow function-------------------------
-var result = Enumerable.range(1, 10)
+var resultArrow = Enumerable.range(1, 10)
   .where((i) => i % 3 == 0)
   .select((i) => i * 10);
 
 java.lang.System.out.println(
-  JSON.stringify(result.toArray())
+  JSON.stringify(resultArrow.toArray())
 ); // [30,60,90]
 
 // Function expression aka regular function-----------------------------
-var result = Enumerable.range(1, 10)
+var resultFunction = Enumerable.range(1, 10)
   .where( function(i) { return i % 3 == 0 } )
   .select( function(i) { return i * 10 } );
 
 java.lang.System.out.println(
-  JSON.stringify(result.toArray())
+  JSON.stringify(resultFunction.toArray())
 ); // [30,60,90]
 
 // End------------------------------------------------------------------
