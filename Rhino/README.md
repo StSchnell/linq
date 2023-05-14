@@ -8,7 +8,7 @@ To use linq with Rhino it is necessary to modify the source code of linq.js to t
 
 You can find a suitably modified version of linq.js as [linq.class.js](https://github.com/StSchnell/linq/blob/master/Rhino/linq.class.js) here. With the load command you can use it inside Rhino JavaScript.
 
-An [example](https://github.com/StSchnell/linq/blob/master/Rhino/linq_class_test.js) is available here, this shows how to use it.
+A very detailed [example](https://github.com/StSchnell/linq/blob/master/Rhino/linq_class_test.js) is available here, this shows how to use it.
 
 ## Hints
 * Rhino supports [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) since version 1.7.8. If an older version is used, only [regular functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function) can be used. 
