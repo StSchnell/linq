@@ -17,9 +17,9 @@ A very detailed [example](https://github.com/StSchnell/linq/blob/master/Rhino/li
 // Begin----------------------------------------------------------------
 
 load("linq.class.js");
+var Enumerable = LINQ();
 
 // Arrow function expression aka arrow function-------------------------
-var Enumerable = LINQ();
 var result = Enumerable.range(1, 10)
   .where((i) => i % 3 == 0)
   .select((i) => i * 10);
