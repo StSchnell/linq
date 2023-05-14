@@ -41,3 +41,28 @@ java.lang.System.out.println(
 ```
 
 * linq supports only lambda syntax (dot notation) and not query expression.
+
+```js
+// Begin----------------------------------------------------------------
+
+load("linq.class.js");
+var Enumerable = LINQ();
+
+var range = Enumerable.range(1, 10);
+
+// Lambda syntax--------------------------------------------------------
+var result = range
+  .where( function(i) { return i % 3 == 0 } )
+  .select( function(i) { return i * 10 } );
+
+/* Query expression is not supported------------------------------------
+var result = from i in range where i % 3 == 0 select i * 10;
+ */
+
+java.lang.System.out.println(
+  JSON.stringify(result.toArray())
+); // [30,60,90]
+
+// End------------------------------------------------------------------
+```
+
