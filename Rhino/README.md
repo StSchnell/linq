@@ -10,7 +10,8 @@ You can find a suitably modified version of linq.js as [linq.class.js](https://g
 
 An [example](https://github.com/StSchnell/linq/blob/master/Rhino/linq_class_test.js) is available here, this shows how to use it.
 
-**Hint:** Rhino supports [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) since version 1.7.8. If an older version is used, only [regular functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function) can be used. 
+## Hints
+* Rhino supports [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) since version 1.7.8. If an older version is used, only [regular functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function) can be used. 
 
 ```js
 // Begin----------------------------------------------------------------
@@ -39,4 +40,4 @@ java.lang.System.out.println(
 // End------------------------------------------------------------------
 ```
 
-**Hint:** linq supports only lambda syntax (dot notation) and not query expression.
+* linq supports only lambda syntax (dot notation) and not query expression.
