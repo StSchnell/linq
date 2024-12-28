@@ -1,24 +1,21 @@
-
-// LINQ - Begin---------------------------------------------------------
-
-function LINQ() {
-
-/*
+/**
  * linq - JavaScript implementation of the .NET LINQ (Language
  *        Integrated Query) library
- * @version    : 4.0.1
+ * @version    : 4.0.3
  * @author     : Mihai Ciuraru
  * @license    : MIT
  * @repository : https://github.com/mihaifm/linq
- * @built      : 2022-11-06
+ * @built      : 2024-05-19
  *
  * LINQ Standard Query Operators Overview
  * https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/standard-query-operators-overview
  */
 
+function LINQ() {
+
   var _linq = function() {
 
-// >>>Begin Copy the content of linq.js<<<
+// >>>Begin copy the content of linq.js<<<
 
 /*----------------------------------------------------------------------
  * linq.js - LINQ for JavaScript
@@ -94,7 +91,7 @@ var Utils = {
             configurable: true,
             writable: true,
             value: value
-        })
+        });
     },
 
     compare: function (a, b) {
@@ -322,6 +319,22 @@ Enumerable.from = function (obj) {
                 Functions.Blank);
         });
     }
+    if (typeof obj == Types.Function && Object.keys(obj).length == 0) {
+        return new Enumerable(function () {
+            var orig;
+
+            return new IEnumerator(
+                function () {
+                    orig = obj()[Symbol.iterator]();
+                },
+                function () {
+                    var next = orig.next();
+                    return (next.done ? false : (this.yieldReturn(next.value)));
+                },
+                Functions.Blank);
+        });
+    }
+
     if (typeof obj != Types.Function) {
         // array or array-like object
         if (typeof obj.length == Types.Number) {
@@ -330,6 +343,20 @@ Enumerable.from = function (obj) {
 
         // iterable object
         if (typeof Symbol !== 'undefined' && typeof obj[Symbol.iterator] !== 'undefined') {
+            var iterator;
+            return new Enumerable(function () {
+                return new IEnumerator(
+                    function () { iterator = obj[Symbol.iterator]()},
+                    function () {
+                        var next = iterator.next();
+                        return (next.done ? false : (this.yieldReturn(next.value)));
+                    },
+                    Functions.Blank);
+            });
+        }
+
+        // object conforming to the iterator protocol
+        if (typeof obj.next == Types.Function) {
             return new Enumerable(function () {
                 return new IEnumerator(
                     Functions.Blank,
@@ -978,14 +1005,14 @@ Enumerable.prototype.zip = function () {
                 function () {
                     var array = Enumerable.make(source)
                         .concat(Enumerable.from(args).takeExceptLast().select(Enumerable.from))
-                        .select(function (x) { return x.getEnumerator() })
+                        .select(function (x) { return x.getEnumerator(); })
                         .toArray();
                     enumerators = Enumerable.from(array);
                 },
                 function () {
-                    if (enumerators.all(function (x) { return x.moveNext() })) {
+                    if (enumerators.all(function (x) { return x.moveNext(); })) {
                         var array = enumerators
-                            .select(function (x) { return x.current() })
+                            .select(function (x) { return x.current(); })
                             .toArray();
                         array.push(index++);
                         return this.yieldReturn(selector.apply(null, array));
@@ -1014,7 +1041,7 @@ Enumerable.prototype.merge = function () {
             function () {
                 enumerators = Enumerable.make(source)
                     .concat(Enumerable.from(args).select(Enumerable.from))
-                    .select(function (x) { return x.getEnumerator() })
+                    .select(function (x) { return x.getEnumerator(); })
                     .toArray();
             },
             function () {
@@ -1243,7 +1270,7 @@ Enumerable.prototype.concat = function () {
                 function () {
                     enumerators = Enumerable.make(source)
                         .concat(Enumerable.from(args).select(Enumerable.from))
-                        .select(function (x) { return x.getEnumerator() })
+                        .select(function (x) { return x.getEnumerator(); })
                         .toArray();
                 },
                 function () {
@@ -1369,18 +1396,7 @@ Enumerable.prototype.contains = function (value, compareSelector) {
     var enumerator = this.getEnumerator();
     try {
         while (enumerator.moveNext()) {
-            if (value === Object(value)) {
-                // Check shallow equality of objects
-                // https://dmitripavlutin.com/how-to-compare-objects-in-javascript/
-                if (Object.keys(compareSelector(enumerator.current())).length === Object.keys(value).length) {
-                    var findValue = Object.keys(compareSelector(enumerator.current())).filter(function (key) {
-                        return compareSelector(enumerator.current())[key] === value[key];
-                    });
-                    if (findValue.length !== 0) return true;
-                }
-            } else {
-                if (compareSelector(enumerator.current()) === value) return true;
-            }
+            if (compareSelector(enumerator.current()) === value) return true;
         }
         return false;
     }
@@ -3080,12 +3096,12 @@ var Grouping = function (groupKey, elements) {
 };
 Grouping.prototype = new ArrayEnumerable();
 
-// >>>End Copy the content of linq.js<<<
+// >>>End copy the content of linq.js<<<
 
     return Enumerable;
 
-  }
+  };
 
   return _linq();
 
-} // LINQ - End---------------------------------------------------------
+}
