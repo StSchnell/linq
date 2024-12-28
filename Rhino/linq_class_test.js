@@ -9,7 +9,8 @@ load("linq.class.js");
 
 /* Begin----------------------------------------------------------------
  *
- * Checked with Rhino JavaScript engine releases 1.7.14 and 1.7.R4
+ * Checked with Rhino JavaScript engine releases 1.7.15, 1.7.14
+ * and 1.7.R4
  */
 
 var Enumerable = LINQ();
