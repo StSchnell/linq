@@ -19,7 +19,7 @@ A very detailed [example](https://github.com/StSchnell/linq/blob/master/Rhino/li
 load("linq.class.js");
 var Enumerable = LINQ();
 
-// Arrow function expression aka arrow function-------------------------
+// Arrow function expression aka arrow function
 var resultArrow = Enumerable.range(1, 10)
   .where((i) => i % 3 == 0)
   .select((i) => i * 10);
@@ -28,7 +28,7 @@ java.lang.System.out.println(
   JSON.stringify(resultArrow.toArray())
 ); // [30,60,90]
 
-// Function expression aka regular function-----------------------------
+// Function expression aka regular function
 var resultFunction = Enumerable.range(1, 10)
   .where( function(i) { return i % 3 == 0 } )
   .select( function(i) { return i * 10 } );
@@ -50,12 +50,12 @@ var Enumerable = LINQ();
 
 var range = Enumerable.range(1, 10);
 
-// Lambda syntax--------------------------------------------------------
+// Lambda syntax
 var result = range
   .where( function(i) { return i % 3 == 0 } )
   .select( function(i) { return i * 10 } );
 
-/* Query expression is not supported------------------------------------
+/* Query expression is not supported
 var result = from i in range where i % 3 == 0 select i * 10;
  */
 
